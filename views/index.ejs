@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+	<html ng-app="myApp" ng-cloak>
+	<head>
+		<title>NODEJS | My FIRST EXPRESS APP</title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.formvalidation/0.6.1/css/formValidation.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+  </head>
+
+
+<body ng-controller="myctrl">
+
+  <nav class=" nav navbar-inverse">
+    <div class="navbar-header">
+    <a class="navbar-brand"><%= title  %></a>
+  </div>
+  </nav>
+
+  <div class="container-fluid jumbotron">
+    <h2> List Of all My Roomates</h2>
+    <hr>
+    <div class="row" ng-repeat="user in users">
+    <div class="col-sm-4 col-lg-4">
+    <ul  >
+        <li>{{user.name}}</li>
+
+      </ul>
+    </div>
+    <div class="col-sm-4 col-lg-4">
+      <ul>
+          <li>{{user.age}}</li>
+
+        </ul>
+      </div>
+      <div class="col-sm-4 col-lg-4">
+        <ul >
+            <li>{{user.school}}</li>
+
+          </ul>
+        </div>
+    </div>
+
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+var app = angular.module('myApp',[]);
+app.controller('myctrl',function($scope){
+     $scope.users = [
+             {name : "Anish Singh ", age :18 , school: "SITE"},
+             {name : "Apporv ", age :21 , school: "SITE"},
+             {name : "Lucky ", age :19 , school: "SITE"},
+             {name : "Rohan Rawal ", age :19 , school: "SITE"}
+    ];
+});
+</script>
+</body>
+</html>
